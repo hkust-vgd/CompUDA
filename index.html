@@ -26,10 +26,11 @@
 
   <!-- Favicon
          –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="icon" type="image/png" href="img/logo.svg">
 
   <!-- Google icon -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
   <!-- Hover effect: https://codepen.io/nxworld/pen/ZYNOBZ -->
   <style>
@@ -75,13 +76,13 @@
   <div class="container">
     <h4 style="text-align:center">CompUDA: Compositional Unsupervised Domain Adaptation for Semantic Segmentation under Adverse Conditions</h4>
     <p align="center" , style="margin-bottom:12px;">
-      <a class="simple" href="#">Ziqiang Zheng</a><sup>1</sup>
+      <a class="simple" href="#" target="_blank">Ziqiang Zheng</a><sup>1</sup>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <a class="simple" href="https://chenyingshu.github.io/">Yingshu Chen</a><sup>1</sup>
+      <a class="simple" href="https://chenyingshu.github.io/" target="_blank">Yingshu Chen</a><sup>1</sup>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <a class="simple" href="https://sonhua.github.io/">Binh-Son Hua</a><sup>2,3</sup>
+      <a class="simple" href="https://sonhua.github.io/" target="_blank">Binh-Son Hua</a><sup>2,3</sup>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <a class="simple" href="https://saikit.org/">Sai-Kit Yeung</a><sup>1</sup>
+      <a class="simple" href="https://saikit.org/" target="_blank">Sai-Kit Yeung</a><sup>1</sup>
     </p>
 
     <p align="center" style="margin-bottom:20px;">
@@ -89,18 +90,19 @@
       <br>
       <sup>2</sup>Trinity College Dublin
       <br>
-      <sup>3</sup>VinAI Research, Hanoi, Vietnam
+      <sup>3</sup>VinAI Research
     </p>
 
     <div class="venue">
       <p align="center"><b>IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) 2023</b></p>
     </div>
 
-    <!-- <figure>
-      <img src="images/overview.png" style="width:100%"></img>
-    </figure> -->
+    <figure>
+      <img src="img/framework.png" style="width:100%"></img>
+    </figure>
     
-    <!-- <p align="center">Overview of Marine Video Retrieval System. </p> -->
+    <p align="center">Framework Overview of CompUDA. </p>
+    <!-- The reference images collected under the normal condition (daytime) are regarded from the intermediate domain. We first perform the unsupervised domain adaptation (UDA) between the source domain and the intermediate domain and generated the pseudo labels for the daytime images. We assume the availability of image-level one-to-one correspondences (geometry alignment) between the daytime images and the low visibility images captured under various adverse conditions. We propose to use a geometry-aligned image translation to transfer the daytime images from the intermediate domain to a synthetic domain for reducing the visibility gap. We then conduct a final synthetic-to-real adaptation between the synthesized images and the target images. -->
 
     <div id="teaser" class="container" style="width:100%; margin:0; padding:0">
 
@@ -114,36 +116,44 @@
     </div>
 
 
-    <!--<div class="section">
+    <div class="section">
       <h5>Materials</h5>
       <div class="container" style="width:95%">
         <div class="row">
-          <div class="three columns">
-            <a href="https://arxiv.org/pdf/2306.04593.pdf"><img
-                style="border: 1px solid #ddd; border-radius: 4px; padding: 2px; width: 108px;"
-                src="images/page1.png"></a>
+          <div class="three columns" style="display: flex; flex-direction: column; align-items: center;">
+            <a href="./assets/iros2023_CompUDA.pdf" target="_blank">
+              <span style="border: 1px solid #ddd; border-radius: 4px; padding: 2px; font-size: 108px;" class="material-symbols-outlined">
+              article
+              </span>
+            </a>
+            <a href="./assets/iros2023_CompUDA.pdf" target="_blank">Paper</a>
           </div>
-          <div class="three columns">
-            <a href="http://marinevrs-demo.hkustvgd.com/"><img
-                style="border: 1px solid #ddd; border-radius: 4px; padding: 2px; width: 108px;"
-                src="images/demo.png"></a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="three columns">
-            <a href="https://arxiv.org/pdf/2306.04593.pdf">Paper (arxiv)</a>
-          </div>
-          <div class="three columns">
-            <a href="http://marinevrs-demo.hkustvgd.com/">Demo</a>
+          <div class="three columns" style="display: flex; flex-direction: column; align-items: center;">
+            <a href="https://github.com/zhengziqiang/CompUDA" target="_blank">
+              <span style="border: 1px solid #ddd; border-radius: 4px; padding: 2px; font-size: 108px;" class="material-symbols-outlined">
+              code
+              </span></a>
+              <a href="https://github.com/zhengziqiang/CompUDA" target="_blank">Code</a>
           </div>
         </div>
       </div>
-    </div> -->
+    </div> 
 
     <br>
 
     
-
+   <!--  <div class="container" style="width:100%; margin:0; padding:0">
+      <h5>Our Retrieval Module</h5>
+      <center>
+        <img src="images/retrieval_module.png" style="width:100%"></img>
+        <div class="caption">
+          <p align="justify">
+            In the beginning, our Retrieval module will take <a href="https://mvk.hkustvgd.com/">MVK dataset</a> as input, then we pre-process videos to get CLIP features and metadata for indexing. With each text-based query, we will search and rank relevant videos and output them for use as input of the Explainability module. However, in order to make this process efficient and scalable, we split the retrieval module into two stages: the indexing stage and the retrieval stage. During the indexing stage, we preprocess and store the videos and their metadata in a vector database while maintaining all relevant information. In the retrieval stage, we use the power of both CPU and GPU to efficiently calculate the similarity scores between the query and the stored videos.
+          </p>
+        </div>
+        <br>
+      </center>
+    </div> -->
 
     <div class="section">
       <h5>Citation</h5>
