@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <br>
+  <!-- Basic Page Needs
+         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>CompUDA</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/footable.standalone.min.css">
+
+  <!-- Favicon
+         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <!-- Google icon -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <!-- Hover effect: https://codepen.io/nxworld/pen/ZYNOBZ -->
+  <style>
+    img {
+      display: block;
+    }
+
+    .column-50 {
+      float: left;
+      width: 50%;
+    }
+
+    .row-50:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .floating-teaser {
+      float: left;
+      width: 30%;
+      text-align: center;
+      padding: 15px;
+    }
+
+    .venue strong {
+      color: #99324b;
+    }
+
+    .benchmark {
+      width: 100%;
+      max-width: 960px;
+      overflow: scroll;
+      overflow-y: hidden;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Primary Page Layout
+         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <h4 style="text-align:center">CompUDA: Compositional Unsupervised Domain Adaptation for Semantic Segmentation under Adverse Conditions</h4>
+    <p align="center" , style="margin-bottom:12px;">
+      <a class="simple" href="#">Ziqiang Zheng</a><sup>1</sup>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="simple" href="https://chenyingshu.github.io/">Yingshu Chen</a><sup>1</sup>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="simple" href="https://sonhua.github.io/">Binh-Son Hua</a><sup>2,3</sup>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="simple" href="https://saikit.org/">Sai-Kit Yeung</a><sup>1</sup>
+    </p>
+
+    <p align="center" style="margin-bottom:20px;">
+      <sup>1</sup>The Hong Kong University of Science and Technology
+      <br>
+      <sup>2</sup>Trinity College Dublin
+      <br>
+      <sup>3</sup>VinAI Research, Hanoi, Vietnam
+    </p>
+
+    <div class="venue">
+      <p align="center"><b>IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) 2023</b></p>
+    </div>
+
+    <!-- <figure>
+      <img src="images/overview.png" style="width:100%"></img>
+    </figure> -->
+    
+    <!-- <p align="center">Overview of Marine Video Retrieval System. </p> -->
+
+    <div id="teaser" class="container" style="width:100%; margin:0; padding:0">
+
+      <h5>Abstract</h5>
+      <p align="justify">
+         In autonomous driving, performing robust semantic segmentation under adverse weather conditions is a
+          long-standing challenge. Imperfect camera observations under adverse conditions result in images with reduced visibility, which hinders label annotation and semantic scene understanding based on these images. A common solution is to adopt semantic segmentation models trained in a source domain with ground truth labels and perform unsupervised domain adaptation (UDA) from the source domain to an unlabeled target domain that has adverse conditions. Due to imperfect visual observations in the target domain, such adaptation needs special treatment to achieve good performance. In this paper, we propose a new compositional unsupervised domain adaptation (CompUDA) method that disentangles the domain gap based on multiple factors including style, visibility, and image quality. The domain gaps caused by these individual factors can then be addressed separately by introducing the intermediate domains. Specifically, 1) to address the style gap, we perform source-to-intermediate domain adaptation and generate pseudo-labels for self-training in the target domain; 2) to address the visibility gap, we perform a geometry-aligned normal-to-adverse image translation and introduce a synthetic domain; 3) finally, to address the image quality gap between the synthetic and target domain, we perform a synthetic-to-real adaptation based on the generated pseudo-labels. Our compositional unsupervised domain adaptation can be used in conjunction with a wide variety of semantic segmentation methods and result in significant performance improvement across datasets.
+        <br>
+        <br>
+      </p>
+    </div>
+
+
+    <!--<div class="section">
+      <h5>Materials</h5>
+      <div class="container" style="width:95%">
+        <div class="row">
+          <div class="three columns">
+            <a href="https://arxiv.org/pdf/2306.04593.pdf"><img
+                style="border: 1px solid #ddd; border-radius: 4px; padding: 2px; width: 108px;"
+                src="images/page1.png"></a>
+          </div>
+          <div class="three columns">
+            <a href="http://marinevrs-demo.hkustvgd.com/"><img
+                style="border: 1px solid #ddd; border-radius: 4px; padding: 2px; width: 108px;"
+                src="images/demo.png"></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="three columns">
+            <a href="https://arxiv.org/pdf/2306.04593.pdf">Paper (arxiv)</a>
+          </div>
+          <div class="three columns">
+            <a href="http://marinevrs-demo.hkustvgd.com/">Demo</a>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <br>
+
+    
+
+
+    <div class="section">
+      <h5>Citation</h5>
+      <pre style="margin:0">
+        <code>@inproceedings{zheng2023compuda,
+          title={CompUDA: Compositional Unsupervised Domain Adaptation for Semantic Segmentation under Adverse Conditions},
+          author={Ziqiang Zheng and Yingshu Chen and Binh-Son Hua and Sai-Kit Yeung},
+          booktitle={2023 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+          year={2023}
+          organization={IEEE}
+        }</code>
+        </pre>
+    </div>
+
+    <!-- -->
+    <br>
+
+  <!-- End Document
+         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+
+</html>
